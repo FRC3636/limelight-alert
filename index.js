@@ -28,14 +28,19 @@ setInterval(async () => {
 
 setInterval(async () => {
   if (doWeHaveStock) return;
-  const response = await axios.get(
-    "https://limelightvision.io/products/limelight-3"
-  );
-  if (response.status < 400) {
-    if (!doWeHaveStock) {
-      doWeHaveStock = true;
-      await sendAlert();
+  try {
+    const response = await axios.get(
+      "https://limelightvision.io/products/limelight-3"
+    );
+
+    if (response.status < 400) {
+      if (!doWeHaveStock) {
+        doWeHaveStock = true;
+        await sendAlert();
+      }
     }
+  } catch (e) {
+    // 404 is an error for some reason
   }
 }, 60000);
 
