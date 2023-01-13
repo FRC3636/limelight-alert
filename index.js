@@ -5,6 +5,7 @@ let doWeHaveStock;
 let currentText;
 
 setInterval(async () => {
+  if (doWeHaveStock) return;
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto("https://limelightvision.io/");
