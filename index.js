@@ -14,7 +14,7 @@ setInterval(async () => {
     "xpath/html/body/div[1]/div/header/div[1]/p"
   );
   const value = await page.evaluate((el) => el.textContent, annoucement);
-  if (currentText !== value && currentText !== undefined) {
+  if (currentText !== value && currentText) {
     axios.post(
       "https://canary.discord.com/api/webhooks/1061747212205428857/BQTt08NafP2CP21QGXPgsAYu8JupVMq5H81oIekHl9-6B0BWRDur6_YgpIqU_KvmrtRm",
       {
