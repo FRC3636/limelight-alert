@@ -23,6 +23,7 @@ setInterval(async () => {
     );
   }
   currentText = value;
+  await browser.close();
 }, 60000);
 
 setInterval(async () => {
