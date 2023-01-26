@@ -17,7 +17,7 @@ setInterval(async () => {
   const value = await page.evaluate((el) => el.textContent, annoucement);
   if (currentText !== value && currentText) {
     axios.post(
-      "https://canary.discord.com/api/webhooks/1063357494551908362/w4libAlrSIziov_A21J4mEv0h6cCBnHuiHgsBiFEMy4A6x_lebAUXhQG7lJgXMxTyZJe",
+      "YOUR_WEBHOOK_HERE",
       {
         content: `Limelight 3 annoucement has been changed!\nhttps://limelightvision.io`,
       }
@@ -60,7 +60,7 @@ async function sendAlert() {
     ],
   };
   await axios.post(
-    "https://canary.discord.com/api/webhooks/1063357494551908362/w4libAlrSIziov_A21J4mEv0h6cCBnHuiHgsBiFEMy4A6x_lebAUXhQG7lJgXMxTyZJe",
+    "YOUR_WEBHOOK_HERE",
     webhookBody
   );
 }
